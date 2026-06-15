@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChukiTravel - Descubre Chuquisaca sin preocuparte por nada</title>
+    <meta name="description" content="ChukiTravel organiza tu viaje completo en Chuquisaca, Bolivia. Transporte, hospedaje, alimentación, guías y entradas incluidos. Turismo responsable y experiencias personalizadas.">
+    <meta name="keywords" content="turismo Sucre, viajes Chuquisaca, paquetes turísticos Bolivia, turismo cultural, Maragua, Tarabuco, Cal Orck'o, turismo aventura">
+    <meta name="author" content="ChukiTravel">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#13294B',
+                        'primary-purple': '#5E35B1',
+                        'primary-orange': '#FF6B00',
+                        'primary-yellow': '#F9B000',
+                        'primary-green': '#2E8B57',
+                        'light-bg': '#F8F4EE',
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-in-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'pulse-slow': 'pulse 3s infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .text-shadow {
+            text-shadow: -1px 1px 3px rgba(0,0,0,0.3);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .form-input:focus {
+            box-shadow: 0 0 0 3px rgba(94, 53, 177, 0.2);
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #13294B 0%, #5E35B1 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #FF6B00, #F9B000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="font-inter bg-light-bg text-gray-800">
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/591XXXXXXXXX?text=Hola%2C%20me%20interesa%20recibir%20informaci%C3%B3n%20sobre%20los%20paquetes%20tur%C3%ADsticos%20de%20ChukiTravel" 
+       target="_blank" 
+       class="fixed bottom-6 right-6 z-50 bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-700 transition-all duration-300 animate-pulse-slow">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-40 bg-white shadow-md">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">C</span>
+                    </div>
+                    <h1 class="text-2xl font-bold font-montserrat text-primary-blue">CHUKITRAVEL</h1>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8" id="desktop-nav">
+                    <!-- Navigation will be rendered here -->
+                </div>
+                
+                <button id="mobile-menu-btn" class="md:hidden text-primary-blue text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-nav" class="hidden md:hidden mt-4 bg-white rounded-lg shadow-lg p-4">
+                <!-- Mobile nav will be rendered here -->
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[90vh] flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://picsum.photos/1920/1080?random=1" alt="Vista panorámica de Sucre, Chuquisaca" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary-blue/80 to-primary-purple/60"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 z-10 relative">
+            <div class="max-w-3xl animate-fade-in">
+                <h2 class="text-4xl md:text-6xl font-bold font-montserrat text-white text-shadow mb-6">
+                    VIAJES QUE TE CONECTAN CON LA ESENCIA DE CHUQUISACA
+                </h2>
+                <p class="text-xl text-white/90 mb-8 font-poppins">
+                    Explora Sucre, sus provincias y los paisajes más increíbles de Bolivia con experiencias diseñadas para ti.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 mb-10">
+                    <button class="bg-primary-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors duration-300">
+                        Ver paquetes
+                    </button>
+                    <button class="bg-white text-primary-blue px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300">
+                        Diseña tu viaje
+                    </button>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4" id="hero-indicators">
+                    <!-- Indicators will be rendered here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-center text-primary-blue mb-12">
+                TODO INCLUIDO, SIN PREOCUPACIONES
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="benefits-grid">
+                <!-- Benefits will be rendered here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section class="py-16 bg-light-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-center text-primary-blue mb-12">
+                DESTINOS IMPERDIBLES
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="destinations-grid">
+                <!-- Destination cards will be rendered here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiences Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-center text-primary-blue mb-12">
+                VIAJA A TU MANERA
+            </h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6" id="experiences-grid">
+                <!-- Experience cards will be rendered here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Your Trip Section -->
+    <section class="py-16 gradient-bg">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold font-montserrat text-primary-blue mb-6 text-center">
+                    DISEÑA TU VIAJE IDEAL
+                </h2>
+                
+                <form id="trip-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="trip-form-fields">
+                        <!-- Form fields will be rendered here -->
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="bg-primary-orange text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-orange-600 transition-colors duration-300">
+                            Cotizar mi viaje
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Packages -->
+    <section class="py-16 bg-light-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-center text-primary-blue mb-12">
+                PAQUETES DESTACADOS
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="packages-grid">
+                <!-- Package cards will be rendered here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-center text-primary-blue mb-12">
+                LO QUE DICEN NUESTROS VIAJEROS
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="testimonials-grid">
+                <!-- Testimonials will be rendered here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="py-16 bg-light-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-center text-primary-blue mb-12">
+                GALERÍA VISUAL
+            </h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="gallery-grid">
+                <!-- Gallery images will be rendered here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="relative py-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://picsum.photos/1920/800?random=12" alt="Panorámica de Chuquisaca" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary-blue/90 to-primary-purple/80"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 z-10 relative text-center">
+            <h2 class="text-4xl md:text-5xl font-bold font-montserrat text-white mb-6">
+                TU PRÓXIMA AVENTURA COMIENZA AQUÍ
+            </h2>
+            <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto font-poppins">
+                Déjanos planificar cada detalle mientras tú disfrutas la experiencia.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <button class="bg-white text-primary-blue px-10 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-300">
+                    Solicitar Cotización
+                </button>
+                <a href="https://wa.me/591XXXXXXXXX?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20viajes%20de%20ChukiTravel" 
+                   target="_blank"
+                   class="bg-green-600 text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-green-700 transition-colors duration-300">
+                    <i class="fab fa-whatsapp mr-2"></i> Hablar por WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-blue text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">C</span>
+                        </div>
+                        <h3 class="text-2xl font-bold font-montserrat">CHUKITRAVEL</h3>
+                    </div>
+                    <p class="text-white/80 mb-4">
+                        "Descubre Chuquisaca sin preocuparte por nada."
+                    </p>
+                    <p class="text-white/80">
+                        Sucre - Chuquisaca, Bolivia
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 font-montserrat">CONTACTO</h4>
+                    <ul class="space-y-3" id="contact-list">
+                        <!-- Contact items will be rendered here -->
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 font-montserrat">ENLACES RÁPIDOS</h4>
+                    <ul class="space-y-2" id="quick-links">
+                        <!-- Quick links will be rendered here -->
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 font-montserrat">SÍGUENOS</h4>
+                    <div class="flex space-x-4 mb-6" id="social-links">
+                        <!-- Social links will be rendered here -->
+                    </div>
+                    <div class="bg-white/10 rounded-lg p-4">
+                        <p class="text-sm mb-2">📍 Ubicación en Google Maps</p>
+                        <a href="https://maps.google.com/?q=Sucre,Chuquisaca,Bolivia" 
+                           target="_blank"
+                           class="text-primary-yellow hover:text-yellow-400 text-sm font-medium">
+                            Ver en Google Maps →
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 mt-8 pt-8 text-center text-white/60 text-sm">
+                <p>© 2024 ChukiTravel. Todos los derechos reservados. Turismo responsable y sostenible.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ========== DATA LAYER ==========
+        const navigationItems = [
+            { "label": "Inicio", "href": "#hero", "icon": "fas fa-home" },
+            { "label": "Beneficios", "href": "#benefits", "icon": "fas fa-check-circle" },
+            { "label": "Destinos", "href": "#destinations", "icon": "fas fa-map-marker-alt" },
+            { "label": "Experiencias", "href": "#experiences", "icon": "fas fa-users" },
+            { "label": "Paquetes", "href": "#packages", "icon": "fas fa-suitcase" },
+            { "label": "Testimonios", "href": "#testimonials", "icon": "fas fa-star" },
+            { "label": "Contacto", "href": "#contact", "icon": "fas fa-phone-alt" }
+        ];
+
+        const heroIndicators = [
+            { "text": "Transporte incluido", "icon": "fas fa-bus" },
+            { "text": "Hospedaje incluido", "icon": "fas fa-hotel" },
+            { "text": "Guías especializados", "icon": "fas fa-user-tie" },
+            { "text": "Alimentación incluida", "icon": "fas fa-utensils" },
+            { "text": "Entradas y visitas", "icon": "fas fa-ticket-alt" }
+        ];
+
+        const benefits = [
+            { "title": "Itinerarios flexibles", "description": "Personalizamos tu viaje según tus preferencias y tiempo disponible.", "icon": "fas fa-calendar-alt", "color": "text-primary-purple" },
+            { "title": "Viajes seguros", "description": "Transporte certificado y protocolos de seguridad en todas nuestras experiencias.", "icon": "fas fa-shield-alt", "color": "text-primary-green" },
+            { "title": "Atención personalizada", "description": "Un asesor te acompañará desde la planificación hasta el final de tu viaje.", "icon": "fas fa-headset", "color": "text-primary-orange" },
+            { "title": "Asistencia 24/7", "description": "Soporte continuo durante toda tu experiencia en Chuquisaca.", "icon": "fas fa-clock", "color": "text-primary-blue" },
+            { "title": "Precios transparentes", "description": "Sin cargos ocultos. Todo incluido en el precio final.", "icon": "fas fa-tag", "color": "text-primary-yellow" },
+            { "title": "Turismo responsable", "description": "Promovemos el respeto a las comunidades y el medio ambiente.", "icon": "fas fa-leaf", "color": "text-primary-green" }
+        ];
+
+        const destinations = [
+            { 
+                "title": "SUCRE PATRIMONIO", 
+                "description": "Casa de la Libertad, Plaza 25 de Mayo, Catedral, San Felipe Neri, Parque Bolívar, La Recoleta",
+                "image": "https://picsum.photos/600/400?random=2",
+                "alt": "Sucre Patrimonio de la Humanidad",
+                "color": "border-primary-purple"
+            },
+            { 
+                "title": "PARQUE CRETÁCICO", 
+                "description": "Cal Orck'o, Huellas de dinosaurios, Museo interactivo",
+                "image": "https://picsum.photos/600/400?random=3",
+                "alt": "Parque Cretácico Cal Orck'o",
+                "color": "border-primary-orange"
+            },
+            { 
+                "title": "MARAGUA", 
+                "description": "Cráter de Maragua, Niñu Mayu, Comunidades originarias",
+                "image": "https://picsum.photos/600/400?random=4",
+                "alt": "Crater de Maragua",
+                "color": "border-primary-green"
+            },
+            { 
+                "title": "TARABUCO", 
+                "description": "Feria dominical, Pujllay, Artesanías textiles",
+                "image": "https://picsum.photos/600/400?random=5",
+                "alt": "Mercado de Tarabuco",
+                "color": "border-primary-yellow"
+            },
+            { 
+                "title": "VALLE DE CINTI", 
+                "description": "Ruta del vino, Bodegas tradicionales, Gastronomía",
+                "image": "https://picsum.photos/600/400?random=6",
+                "alt": "Valle de Cinti viñedos",
+                "color": "border-primary-blue"
+            },
+            { 
+                "title": "CORDILLERA FRAILES", 
+                "description": "Senderismo, Paisajes andinos, Aventura en altura",
+                "image": "https://picsum.photos/600/400?random=7",
+                "alt": "Cordillera de los Frailes",
+                "color": "border-primary-purple"
+            }
+        ];
+
+        const experiences = [
+            { "title": "EN PAREJA", "description": "Experiencias románticas y privadas", "icon": "fas fa-heart", "bg": "bg-pink-50", "text": "text-pink-600" },
+            { "title": "EN FAMILIA", "description": "Diversión para todas las edades", "icon": "fas fa-home", "bg": "bg-blue-50", "text": "text-blue-600" },
+            { "title": "EN GRUPO", "description": "Amigos y aventura compartida", "icon": "fas fa-users", "bg": "bg-green-50", "text": "text-green-600" },
+            { "title": "COLEGIOS", "description": "Viajes educativos y culturales", "icon": "fas fa-graduation-cap", "bg": "bg-yellow-50", "text": "text-yellow-600" },
+            { "title": "UNIVERSIDADES", "description": "Experiencias académicas", "icon": "fas fa-university", "bg": "bg-purple-50", "text": "text-purple-600" },
+            { "title": "EMPRESAS", "description": "Integración corporativa", "icon": "fas fa-briefcase", "bg": "bg-indigo-50", "text": "text-indigo-600" },
+            { "title": "INSTITUCIONES", "description": "Programas personalizados", "icon": "fas fa-landmark", "bg": "bg-teal-50", "text": "text-teal-600" },
+            { "title": "AVENTURA", "description": "Turismo extremo y deportivo", "icon": "fas fa-mountain", "bg": "bg-orange-50", "text": "text-orange-600" }
+        ];
+
+        const tripFormFields = [
+            { "id": "people", "label": "Cantidad de personas", "type": "select", "options": ["1-2", "3-5", "6-10", "11-20", "20+"] },
+            { "id": "trip-type", "label": "Tipo de viaje", "type": "select", "options": ["Cultural", "Aventura", "Romántico", "Familiar", "Educativo", "Corporativo"] },
+            { "id": "budget", "label": "Presupuesto (USD)", "type": "select", "options": ["$100-300", "$301-600", "$601-1000", "$1000+"] },
+            { "id": "duration", "label": "Duración (días)", "type": "select", "options": ["Medio día", "1 día", "2 días", "3-5 días", "6+ días"] },
+            { "id": "transport", "label": "Transporte preferido", "type": "select", "options": ["Bus turístico", "Van privada", "4x4", "A pie", "Mixto"] },
+            { "id": "accommodation", "label": "Hospedaje", "type": "select", "options": ["Económico", "Turístico", "Boutique", "Lujo", "Comunitario"] },
+            { "id": "food", "label": "Alimentación", "type": "select", "options": ["Solo desayuno", "Desayuno y almuerzo", "Completa", "Gourmet", "Local"] },
+            { "id": "activities", "label": "Actividades preferidas", "type": "textarea", "placeholder": "Senderismo, fotografía, gastronomía, cultura..." }
+        ];
+
+        const packages = [
+            { 
+                "title": "SUCRE COLONIAL", 
+                "duration": "Medio día", 
+                "includes": ["Recorrido histórico", "Entradas a museos", "Guía bilingüe", "Transporte"], 
+                "price": "45", 
+                "image": "https://picsum.photos/600/400?random=8",
+                "alt": "Sucre colonial tour"
+            },
+            { 
+                "title": "RUTA DINOSAURIO", 
+                "duration": "1 día", 
+                "includes": ["Visita Cal Orck'o", "Museo interactivo", "Almuerzo típico", "Guía especializado", "Transporte"], 
+                "price": "75", 
+                "image": "https://picsum.photos/600/400?random=9",
+                "alt": "Ruta dinosaurio Cal Orck'o"
+            },
+            { 
+                "title": "MARAGUA COMPLETO", 
+                "duration": "1 día", 
+                "includes": ["Cráter de Maragua", "Comunidades originarias", "Almuerzo comunitario", "Guía local", "Transporte 4x4"], 
+                "price": "85", 
+                "image": "https://picsum.photos/600/400?random=10",
+                "alt": "Maragua completo tour"
+            }
+        ];
+
+        const testimonials = [
+            { 
+                "name": "María González", 
+                "location": "La Paz, Bolivia", 
+                "text": "ChukiTravel hizo que nuestro viaje familiar fuera perfecto. No tuvimos que preocuparnos por nada. ¡Volveremos!", 
+                "rating": 5,
+                "avatar": "https://picsum.photos/100/100?random=21"
+            },
+            { 
+                "name": "Carlos Fernández", 
+                "location": "Santa Cruz, Bolivia", 
+                "text": "La atención personalizada y el conocimiento de los guías superó nuestras expectativas. Maragua es increíble.", 
+                "rating": 5,
+                "avatar": "https://picsum.photos/100/100?random=22"
+            },
+            { 
+                "name": "Sophie Martin", 
+                "location": "Francia", 
+                "text": "As a foreign tourist, I was worried about logistics. ChukiTravel handled everything perfectly. Highly recommended!", 
+                "rating": 5,
+                "avatar": "https://picsum.photos/100/100?random=23"
+            }
+        ];
+
+        const galleryImages = [
+            { "src": "https://picsum.photos/400/300?random=31", "alt": "La Recoleta Sucre", "title": "La Recoleta" },
+            { "src": "https://picsum.photos/400/300?random=32", "alt": "Maragua cráter", "title": "Maragua" },
+            { "src": "https://picsum.photos/400/300?random=33", "alt": "Cal Orck'o huellas", "title": "Cal Orck'o" },
+            { "src": "https://picsum.photos/400/300?random=34", "alt": "Tarabuco mercado", "title": "Tarabuco" },
+            { "src": "https://picsum.photos/400/300?random=35", "alt": "Castillo Glorieta", "title": "La Glorieta" },
+            { "src": "https://picsum.photos/400/300?random=36", "alt": "Valle de Cinti", "title": "Cinti" },
+            { "src": "https://picsum.photos/400/300?random=37", "alt": "Cordillera Frailes", "title": "Los Frailes" },
+            { "src": "https://picsum.photos/400/300?random=38", "alt": "Siete Cascadas", "title": "Siete Cascadas" }
+        ];
+
+        const contactInfo = [
+            { "type": "Teléfono", "value": "+591 4 6451234", "icon": "fas fa-phone" },
+            { "type": "WhatsApp", "value": "+591 71234567", "icon": "fab fa-whatsapp" },
+            { "type": "Correo", "value": "info@chukitravel.com", "icon": "fas fa-envelope" },
+            { "type": "Horario", "value": "Lun-Vie: 8:00 - 18:00", "icon": "fas fa-clock" }
+        ];
+
+        const quickLinks = [
+            { "label": "Política de privacidad", "href": "#privacy" },
+            { "label": "Términos y condiciones", "href": "#terms" },
+            { "label": "Preguntas frecuentes", "href": "#faq" },
+            { "label": "Blog de viajes", "href": "#blog" },
+            { "label": "Trabaja con nosotros", "href": "#jobs" }
+        ];
+
+        const socialLinks = [
+            { "platform": "Facebook", "icon": "fab fa-facebook-f", "href": "#", "color": "hover:bg-blue-600" },
+            { "platform": "Instagram", "icon": "fab fa-instagram", "href": "#", "color": "hover:bg-pink-600" },
+            { "platform": "TikTok", "icon": "fab fa-tiktok", "href": "#", "color": "hover:bg-black" },
+            { "platform": "YouTube", "icon": "fab fa-youtube", "href": "#", "color": "hover:bg-red-600" }
+        ];
+
+        // ========== RENDER FUNCTIONS ==========
+        function renderNavigation(items, isMobile = false) {
+            return items.map(item => {
+                if (isMobile) {
+                    return `<a href="${item.href}" class="flex items-center space-x-3 py-3 px-4 rounded-lg hover:bg-primary-blue/10 transition-colors">
+                                <i class="${item.icon} text-primary-blue w-5"></i>
+                                <span class="font-medium">${item.label}</span>
+                            </a>`;
+                } else {
+                    return `<a href="${item.href}" class="text-primary-blue hover:text-primary-purple font-medium transition-colors duration-300">
+                                ${item.label}
+                            </a>`;
+                }
+            }).join("");
+        }
+
+        function renderHeroIndicators(items) {
+            return items.map(item => `
+                <div class="flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-lg p-3">
+                    <i class="${item.icon} text-white"></i>
+                    <span class="text-white font-medium text-sm">${item.text}</span>
+                </div>
+            `).join("");
+        }
+
+        function renderBenefits(items) {
+            return items.map(item => `
+                <div class="bg-white rounded-xl p-6 shadow-lg card-hover animate-slide-up">
+                    <div class="flex items-start space-x-4">
+                        <div class="${item.color} text-2xl">
+                            <i class="${item.icon}"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold font-montserrat mb-2">${item.title}</h3>
+                            <p class="text-gray-600">${item.description}</p>
+                        </div>
+                    </div>
+                </div>
+            `).join("");
+        }
+
+        function renderDestinations(items) {
+            return items.map(item => `
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="${item.image}" alt="${item.alt}" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold font-montserrat text-primary-blue mb-3">${item.title}</h3>
+                        <p class="text-gray-600 mb-4">${item.description}</p>
+                        <button class="text-primary-purple font-semibold hover:text-purple-700 transition-colors">
+                            Ver detalles →
+                        </button>
+                    </div>
+                </div>
+            `).join("");
+        }
+
+        function renderExperiences(items) {
+            return items.map(item => `
+                <div class="${item.bg} rounded-xl p-6 text-center card-hover">
+                    <div class="${item.text} text-3xl mb-4">
+                        <i class="${item.icon}"></i>
+                    </div>
+                    <h3 class="font-bold font-montserrat text-lg mb-2">${item.title}</h3>
+                    <p class="text-gray-600 text-sm">${item.description}</p>
+                </div>
+            `).join("");
+        }
+
+        function renderTripFormFields(fields) {
+            return fields.map(field => {
+                if (field.type === 'select') {
+                    const options = field.options.map(opt => `<option value="${opt}">${opt}</option>`).join("");
+                    return `
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">${field.label}</label>
+                            <select id="${field.id}" 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-purple form-input">
+                                <option value="">Seleccionar...</option>
+                                ${options}
+                            </select>
+                        </div>
+                    `;
+                } else if (field.type === 'textarea') {
+                    return `
+                        <div class="md:col-span-2">
+                            <label class="block text-gray-700 font-medium mb-2">${field.label}</label>
+                            <textarea id="${field.id}" 
+                                      placeholder="${field.placeholder}"
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-purple form-input"
+                                      rows="3"></textarea>
+                        </div>
+                    `;
+                }
+            }).join("");
+        }
+
+        function renderPackages(items) {
+            return items.map(pkg => {
+                const includes = pkg.includes.map(inc => `<li class="flex items-center"><i class="fas fa-check text-primary-green mr-2"></i> ${inc}</li>`).join("");
+                return `
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="${pkg.image}" alt="${pkg.alt}" class="w-full h-full object-cover">
+                            <div class="absolute top-4 right-4 bg-primary-orange text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                ${pkg.duration}
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold font-montserrat text-primary-blue mb-3">${pkg.title}</h3>
+                            <ul class="space-y-2 mb-6">
+                                ${includes}
+                            </ul>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <span class="text-sm text-gray-500">Desde</span>
+                                    <div class="text-2xl font-bold text-primary-blue">$${pkg.price}<span class="text-sm font-normal">/persona</span></div>
+                                </div>
+                                <button class="bg-primary-purple text-white px-6 py-2 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                                    Reservar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join("");
+        }
+
+        function renderTestimonials(items) {
+            return items.map(testimonial => {
+                const stars = Array(testimonial.rating).fill().map(() => '<i class="fas fa-star text-primary-yellow"></i>').join("");
+                return `
+                    <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+                        <div class="flex items-center mb-4">
+                            <img src="${testimonial.avatar}" alt="${testimonial.name}" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold">${testimonial.name}</h4>
+                                <p class="text-gray-500 text-sm">${testimonial.location}</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-4">
+                            ${stars}
+                        </div>
+                        <p class="text-gray-600 italic">"${testimonial.text}"</p>
+                    </div>
+                `;
+            }).join("");
+        }
+
+        function renderGallery(items) {
+            return items.map(img => `
+                <div class="relative overflow-hidden rounded-lg group">
+                    <img src="${img.src}" alt="${img.alt}" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <span class="text-white font-medium">${img.title}</span>
+                    </div>
+                </div>
+            `).join("");
+        }
+
+        function renderContactInfo(items) {
+            return items.map(item => `
+                <li class="flex items-center space-x-3 mb-3">
+                    <i class="${item.icon} text-primary-yellow w-5"></i>
+                    <div>
+                        <div class="text-sm text-white/70">${item.type}</div>
+                        <div class="font-medium">${item.value}</div>
+                    </div>
+                </li>
+            `).join("");
+        }
+
+        function renderQuickLinks(items) {
+            return items.map(item => `
+                <li>
+                    <a href="${item.href}" class="text-white/80 hover:text-primary-yellow transition-colors">
+                        ${item.label}
+                    </a>
+                </li>
+            `).join("");
+        }
+
+        function renderSocialLinks(items) {
+            return items.map(item => `
+                <a href="${item.href}" 
+                   class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center ${item.color} transition-colors">
+                    <i class="${item.icon} text-white"></i>
+                </a>
+            `).join("");
+        }
+
+        // ========== INITIALIZATION ==========
+        document.addEventListener('DOMContentLoaded', function() {
+            // Render all sections
+            document.getElementById('desktop-nav').innerHTML = renderNavigation(navigationItems);
+            document.getElementById('mobile-nav').innerHTML = renderNavigation(navigationItems, true);
+            document.getElementById('hero-indicators').innerHTML = renderHeroIndicators(heroIndicators);
+            document.getElementById('benefits-grid').innerHTML = renderBenefits(benefits);
+            document.getElementById('destinations-grid').innerHTML = renderDestinations(destinations);
+            document.getElementById('experiences-grid').innerHTML = renderExperiences(experiences);
+            document.getElementById('trip-form-fields').innerHTML = renderTripFormFields(tripFormFields);
+            document.getElementById('packages-grid').innerHTML = renderPackages(packages);
+            document.getElementById('testimonials-grid').innerHTML = renderTestimonials(testimonials);
+            document.getElementById('gallery-grid').innerHTML = renderGallery(galleryImages);
+            document.getElementById('contact-list').innerHTML = renderContactInfo(contactInfo);
+            document.getElementById('quick-links').innerHTML = renderQuickLinks(quickLinks);
+            document.getElementById('social-links').innerHTML = renderSocialLinks(socialLinks);
+
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileNav = document.getElementById('mobile-nav');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileNav.classList.toggle('hidden');
+                mobileMenuBtn.innerHTML = mobileNav.classList.contains('hidden') 
+                    ? '<i class="fas fa-bars"></i>' 
+                    : '<i class="fas fa-times"></i>';
+            });
+
+            // Smooth scrolling for navigation links
+            document.addEventListener('click', function(event) {
+                const link = event.target.closest('a[href^="#"]');
+                if (!link) return;
+                
+                const href = link.getAttribute('href');
+                if (href === '#') return;
+                
+                event.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    // Close mobile menu if open
+                    mobileNav.classList.add('hidden');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    
+                    // Smooth scroll to target
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+
+            // Trip form submission
+            const tripForm = document.getElementById('trip-form');
+            tripForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                // Collect form data
+                const formData = {};
+                tripFormFields.forEach(field => {
+                    const element = document.getElementById(field.id);
+                    if (element) {
+                        formData[field.id] = element.value;
+                    }
+                });
+                
+                // In a real implementation, this would send to a server
+                console.log('Trip form submitted:', formData);
+                
+                // Show success message
+                alert('¡Gracias por tu cotización! Nos pondremos en contacto contigo en las próximas 24 horas para diseñar tu viaje ideal.');
+                tripForm.reset();
+            });
+
+            // Package booking buttons
+            document.addEventListener('click', function(event) {
+                if (event.target.closest('.bg-primary-purple') && event.target.closest('button')) {
+                    const packageTitle = event.target.closest('.card-hover').querySelector('h3').textContent;
+                    alert(`¡Excelente elección! Redirigiendo a la reserva del paquete: ${packageTitle}`);
+                    // In real implementation, redirect to booking page
+                }
+            });
+        });
+    </script>
+</body>
+</html>
